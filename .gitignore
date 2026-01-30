@@ -137,3 +137,25 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Chrome Extension specific
+*.zip
+*.crx
+*.pem
+web-ext-artifacts/
+
+# Build directories
+build/
+dist/

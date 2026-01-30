@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Discounts</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💳 Credit Card Discounts</h1>
+      <p class="subtitle">Manage your cards to see personalized offers</p>
+    </div>
+
+    <div class="add-card-section">
+      <h2>Add New Card</h2>
+      <div class="form-group">
+        <label for="bankSelect">Select Bank</label>
+        <select id="bankSelect" class="input-field">
+          <option value="">-- Select Bank --</option>
+          <option value="HDFC">HDFC Bank</option>
+          <option value="SBI">State Bank of India</option>
+          <option value="ICICI">ICICI Bank</option>
+          <option value="Axis">Axis Bank</option>
+          <option value="AMEX">American Express</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cardTypeSelect">Card Type</label>
+        <select id="cardTypeSelect" class="input-field">
+          <option value="">-- Select Type --</option>
+          <option value="Credit">Credit Card</option>
+          <option value="Debit">Debit Card</option>
+        </select>
+      </div>
+      <button id="addCardBtn" class="btn btn-primary">Add Card</button>
+    </div>
+
+    <div class="cards-section">
+      <h2>Your Cards</h2>
+      <div id="cardsList" class="cards-list">
+        <p class="empty-state">No cards added yet. Add a card to see personalized offers!</p>
+      </div>
+    </div>
+
+    <div class="privacy-notice">
+      <p>🔒 <strong>Privacy Notice:</strong> We do not store any sensitive card information. Only bank name and card type are saved locally on your device.</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

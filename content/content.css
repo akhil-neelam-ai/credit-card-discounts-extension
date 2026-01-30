@@ -1,0 +1,225 @@
+/* Discount Panel Styles */
+#cc-discount-panel {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  width: 320px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#cc-discount-panel.collapsed {
+  height: auto;
+  max-height: 60px;
+}
+
+/* Panel Header */
+.cc-panel-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cc-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cc-panel-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cc-toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.cc-toggle-btn:hover {
+  transform: scale(1.2);
+}
+
+.collapsed .cc-toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* Panel Content */
+.cc-panel-content {
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.collapsed .cc-panel-content {
+  display: none;
+}
+
+/* Offer Card */
+.cc-offer-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.cc-offer-card:last-child {
+  margin-bottom: 0;
+}
+
+.cc-offer-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.cc-offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.cc-offer-bank {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cc-bank-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cc-discount-badge {
+  background: #10b981;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cc-offer-details {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.cc-offer-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.cc-meta-badge {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.cc-offer-terms {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Empty State */
+.cc-empty-state {
+  text-align: center;
+  padding: 24px 16px;
+  color: #6b7280;
+}
+
+.cc-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.cc-empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.cc-empty-text {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Scrollbar */
+.cc-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cc-panel-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.cc-panel-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+.cc-panel-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#cc-discount-panel {
+  animation: slideInRight 0.4s ease-out;
+}
