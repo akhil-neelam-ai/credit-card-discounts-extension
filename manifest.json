@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Credit Card Discounts",
+  "version": "1.0.0",
+  "description": "Automatically shows credit card discounts available on shopping websites based on your cards",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.amazon.in/*",
+        "https://*.flipkart.com/*",
+        "https://*.myntra.com/*",
+        "https://*.ajio.com/*",
+        "https://*.makemytrip.com/*",
+        "https://*.swiggy.com/*",
+        "https://*.zomato.com/*",
+        "https://*.bigbasket.com/*",
+        "https://*.bookmyshow.com/*",
+        "https://*.cleartrip.com/*"
+      ],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
